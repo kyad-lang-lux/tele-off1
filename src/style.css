@@ -184,7 +184,7 @@
 }
 
 .hero-text h1 {
-  font-size: clamp(2rem, 4.2vw, 4.6rem); /* Très grand comme sur le modèle */
+  font-size: 4rem; 
   font-weight: 700;
   color: #111827;
   line-height: 1.1;
@@ -272,14 +272,14 @@
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .hero-text h1 { font-size: 2.4rem; letter-spacing: -1px; width: 100%; }
+  .hero-text h1 { font-size: 2.4rem; }
   .phone-wrapper.center { max-width: 100%; }
-  .hero-section { padding-top: 40px; }
   .hero-section {
     padding: 40px 10px;
   }
   .hero-text p{
     font-size: 1rem;
+    
   }
   .hero-text {
   width: 100%;
@@ -292,6 +292,7 @@
   border-radius: 5px; /* Bords arrondis pour le style moderne */
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3); /* Ombre très douce et diffuse */
 }
+
 
 }
 

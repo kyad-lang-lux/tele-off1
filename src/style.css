@@ -1,0 +1,914 @@
+/* Import Poppins si pas déjà fait */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --blue: #2563eb;
+  --orange: #ff7a30;
+  --black: #111827;
+  --white: #ffffff;
+  --light-gray: #f9fafb;
+  --border-color: #e5e7eb;
+}
+*{
+    margin: 0;
+    padding: 0;
+     font-family: 'Poppins', sans-serif;
+}
+.navbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-logo img {
+  height: 35px; /* Taille ajustée pour le style minimaliste */
+  display: block;
+}
+
+/* Menu Desktop */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-menu a i { 
+  font-size: 0.85rem;
+  color: #6b7280; /* Gris discret pour les icônes */
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+  color: var(--blue);
+}
+
+.nav-menu a.active i {
+  color: var(--blue);
+}
+
+/* Bouton Style "Sentient" mais avec ton Orange */
+.btn-nav {
+  background: var(--black); /* Ou var(--blue) selon ta préférence */
+  color: var(--white) !important;
+  padding: 10px 22px;
+  border-radius: 50px; /* Style pilule */
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-nav:hover {
+  background: var(--orange);
+  transform: translateY(-1px);
+}
+
+/* --- RESPONSIVE LOGIC --- */
+
+.menu-btn, .menu-icon, .mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu a {
+    padding: 20px;
+    justify-content: center;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  .nav-actions { display: none; }
+  .mobile-only { display: block; }
+  .menu-icon { display: block; cursor: pointer; padding: 10px; }
+  
+  .navicon {
+    background: var(--black);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+  }
+
+  .navicon:before, .navicon:after {
+    background: var(--black);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+
+  .navicon:before { top: 7px; }
+  .navicon:after { top: -7px; }
+
+  /* Affichage du menu mobile quand la checkbox est cochée */
+  .menu-btn:checked ~ .nav-menu {
+    max-height: 400px;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+}
+
+
+
+/* --- HERO SECTION --- */
+/* --- HERO SECTION --- */
+.hero-section {
+  padding: 30px 20px;
+  background-color: #fcfcfc;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 800px;
+  margin: 0 auto 0px auto;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 4.2vw, 4.6rem); /* Très grand comme sur le modèle */
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+  color: #2563eb; /* Ton Bleu */
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 100%;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* Bouton Orange style Pilule */
+.btn-main-orange {
+  background: #ff7a30; /* Ton Orange */
+  color: white;
+  padding: 11px 17px;
+  border-radius: 100px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 100px rgba(255, 122, 48, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -30px;
+}
+
+.btn-main-orange:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 122, 48, 0.5);
+  background-color: #111827;
+}
+
+/* --- VISUEL UNIQUE --- */
+.hero-visuals {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.phone-wrapper.center {
+  width: 100%;
+  max-width: 900px; /* Largeur pour bien voir ton dashboard */
+  position: relative;
+}
+
+.phone-wrapper.center img {
+  width: 85%;
+  height: auto;
+  border-radius: 30px; /* Bords arrondis pour le style moderne */
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3); /* Ombre très douce et diffuse */
+}
+
+/* Animation de flottaison douce */
+.floating {
+  animation: floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+/* --- ANIMATIONS DE CHARGEMENT --- */
+.fade-in { animation: fadeInUp 0.8s ease forwards; }
+.fade-in-delay { animation: fadeInUp 0.8s ease 0.2s forwards; opacity: 0; }
+.fade-in-delay2 { animation: fadeInUp 0.8s ease 0.4s forwards; opacity: 0; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero-text h1 { font-size: 2.4rem; letter-spacing: -1px; width: 100%; }
+  .phone-wrapper.center { max-width: 100%; }
+  .hero-section { padding-top: 40px; }
+  .hero-section {
+    padding: 40px 10px;
+  }
+  .hero-text p{
+    font-size: 1rem;
+  }
+
+  .phone-wrapper.center img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px; /* Bords arrondis pour le style moderne */
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3); /* Ombre très douce et diffuse */
+}
+
+}
+
+
+
+/* --- FEATURES SECTION --- */
+.features-section {
+  padding: 100px 8%;
+  background-color: #ffffff;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.features-header h2 {
+  font-size: 2.5rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.features-header h2 span {
+  color: #2563eb; /* Ton bleu */
+}
+
+.features-header p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grille Responsivive */
+.features-grid {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  
+}
+
+.feature-card {
+width: 300px;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px solid #e8e9eb; /* Bordure très fine */
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+/* Effet de survol façon "Sentient" */
+.feature-card:hover {
+  transform: translateY(-20px);
+  border-color: #2563eb33;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.06);
+}
+
+/* Style des icônes */
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: #eff6ff; /* Bleu très clair */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.icon-wrapper i {
+  color: #2563eb; /* Ton bleu principal */
+  font-size: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  color: #111827;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Adaptation Mobile */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 60px 20px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+  }
+}
+
+
+/* --- HOW IT WORKS SECTION --- */
+.how-it-works {
+  padding: 100px 8%;
+  background-color: #fcfcfc; /* Un gris extrêmement léger pour contraster avec les cartes blanches */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.section-header h2 span {
+  color: var(--blue);
+}
+
+/* Grille des étapes */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+.step-card {
+  background: var(--white);
+  padding: 50px 30px 30px 30px;
+  border-radius: 20px;
+  border: 1px solid #edf2f7;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05);
+}
+
+/* Le numéro flottant */
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  width: 45px;
+  height: 45px;
+  background: var(--blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.step-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.step-content p {
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Optionnel : Ligne de connexion entre les étapes (Desktop seulement) */
+@media (min-width: 1024px) {
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2563eb, transparent);
+    z-index: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 60px 20px;
+  }
+  
+  .step-card {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+/* --- CTA DARK SECTION --- */
+.cta-dark-section {
+  padding: 100px 8%;
+  background-color: #ffffff; /* Pour faire la transition avec le haut */
+}
+
+.cta-container {
+  background-color: #0a0a0a; /* Fond Noir */
+  border-radius: 40px;
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.cta-content h2 span {
+  color: #2563eb; /* Ton Bleu */
+}
+
+.cta-content p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.7;
+}
+
+/* Boutons CTA */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-cta-orange {
+  background-color: #ff7a30; /* Ton Orange */
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 100px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-cta-orange:hover {
+  background-color: #e66a26;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 122, 48, 0.4);
+}
+
+.btn-cta-outline {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 100px;
+  border: 2px solid #374151;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cta-outline:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Effet de lueur en arrière-plan (Glow) */
+.glow-effect {
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-dark-section {
+    padding: 60px 20px;
+  }
+  
+  .cta-container {
+    padding: 60px 20px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
+
+
+/* --- FOOTER SECTION --- */
+.footer {
+  background-color: #f8fafc; /* Gris très clair pour fermer la page en douceur */
+  padding: 20px 5% 10px 5%;
+  border-top: 1px solid #e5e7eb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+/* Marque et Logo */
+.footer-brand {
+  max-width: 350px;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.footer-brand p {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Liens Légaux */
+.footer-links h4 {
+  color: #111827;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #64748b;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #2563eb; /* Ton Bleu au survol */
+}
+
+/* Barre de Copyright */
+.footer-bottom {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom strong {
+  color: #111827;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 20px 10px 20px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand {
+    margin-bottom: 3px;
+  }
+
+  .footer-logo {
+    margin: 0 auto 10px auto;
+  }
+}
+
+
+/* --- BOUTON RETOUR EN HAUT --- */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;  
+  width: 40px;
+  height: 40px;
+  background-color: #0a0a0a; /* Ton Bleu */
+  color: white;
+  border-radius: 12px; /* Forme carrée arrondie comme ton image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.scroll-to-top i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #1d4ed8; /* Bleu plus foncé au survol */
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3);
+}
+
+.scroll-to-top:hover i {
+  transform: translateY(-3px); /* Petit effet de flèche qui monte */
+}
+
+/* Optionnel : cacher sur les très petits écrans si ça gêne la lecture */
+@media (max-width: 480px) {
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+/* --- PAGE CONNEXION --- */
+.login-container {
+  display: flex;
+  min-height: calc(100vh - 80px); /* Ajuste selon la hauteur de ta nav */
+  background-color: #ffffff;
+}
+
+/* Section visuelle (Gauche) */
+.login-visual {
+  flex: 1;
+  background-image: url('../img/login-bg.jpg'); /* Ton image d'intérieur moderne */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+}
+
+.visual-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.visual-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 450px;
+}
+
+.visual-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.visual-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Section Formulaire (Droite) */
+.login-form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-wrapper h2 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 25px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field i:not(.eye-icon) {
+  position: absolute;
+  left: 15px;
+  color: #9ca3af;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 14px 15px 14px 45px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.input-field input:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+/* Bouton Connexion avec ton dégradé bleu/violet du design */
+.btn-login {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.footer-form-text {
+  text-align: center;
+  margin-top: 30px;
+  color: #6b7280;
+}
+
+.footer-form-text a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .login-visual {
+    display: none; /* Cache l'image sur tablette/mobile pour simplifier */
+  }
+}

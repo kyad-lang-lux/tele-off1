@@ -1,0 +1,180 @@
+
+⚙️ 2. Les Bases de React.js
+
+C’est le cœur du framework :
+
+Comprendre ce qu’est React et le concept du DOM virtuel
+
+Créer un projet avec create-react-app ou Vite
+
+Composants :
+
+Function Components (avec JSX)
+
+Réutilisation de composants
+
+JSX : mélanger HTML et JS dans un même fichier
+
+Props : données envoyées à un composant
+
+State : données internes avec useState
+
+Événements : onClick, onChange, etc.
+
+Rendu conditionnel : if, ? :, &&
+
+Listes et clés (key)
+
+useEffect : effets de bord et cycle de vie du composant
+
+🧠 Exemple d’exercices :
+
+Un compteur avec useState
+
+Une TODO list
+
+Un toggle de thème clair/sombre
+
+
+
+🔄 3. Communication et Structure des Données
+
+Passage de props entre composants
+
+Remonter un state à un parent
+
+Context API → partage de données globales sans props drilling
+
+useReducer → alternative à Redux
+
+Formulaires :
+
+Champs contrôlés / non contrôlés
+
+Validation de données
+
+
+🧠 Exercices :
+Formulaire d’inscription
+
+App de gestion de tâches avec context
+
+
+
+🌍 4. Navigation et API
+
+React Router :
+
+Routes (<BrowserRouter>, <Routes>, <Route>)
+
+Liens (<Link>, useNavigate)
+
+Routes dynamiques (ex : /produit/:id)
+
+Appels API :
+
+fetch() et axios
+
+Gestion du chargement et des erreurs
+
+useEffect pour récupérer des données à l’affichage
+
+🧠 Exercices :
+
+Une app qui affiche des utilisateurs depuis une API publique
+
+Détail utilisateur via une route dynamique
+
+💾 5. Gestion Avancée de l’État
+
+Redux Toolkit (ou Zustand, Recoil selon préférence)
+
+Architecture d’un store Redux
+
+Actions, reducers, slices
+
+Utiliser useSelector et useDispatch
+
+Comparer Redux et Context
+
+🧠 Exercices :
+
+Panier d’achat avec Redux Toolkit
+
+Gestion d’un profil utilisateur global
+
+🎨 6. UI, Performance et Expérience
+
+Bibliothèques CSS :
+
+TailwindCSS (rapide et moderne)
+
+Shadcn/UI, Material UI, Chakra UI, etc.
+
+Performance :
+
+React.memo, useMemo, useCallback
+
+Code splitting (lazy loading)
+
+Animations :
+
+Framer Motion
+
+Transitions CSS
+
+Responsive design et accessibilité (a11y)
+
+🧠 Exercices :
+
+Carte animée au survol
+
+Menu mobile responsive
+
+Animation d’apparition des composants
+
+🚀 7. Création de Projets Réels
+
+Tu mets tout en pratique avec des projets complets :
+
+🛒 E-commerce (Market+)
+
+🍔 FoodRescue (anti-gaspillage)
+
+💼 Portfolio développeur
+
+📰 Blog connecté à une API
+
+🎵 Player de musique
+
+📅 App de rendez-vous ou calendrier
+
+📲 Dashboard d’administration
+
+Tu apprendras aussi :
+
+Organisation d’un gros projet React
+
+Bonnes pratiques (Clean Code, composants réutilisables)
+
+Déploiement :
+
+Vercel / Netlify / GitHub Pages
+
+Optimisation du build (npm run build)
+
+Connexion à un backend (Node.js, Firebase, Django REST...)
+
+🧰 8. Bonus : Technologies qui vont avec React
+
+TypeScript (pour des apps plus robustes)
+
+Next.js (framework React pour SEO + rendu serveur)
+
+Firebase (authentification et base de données)
+
+React Query / TanStack Query (gestion des requêtes API)
+
+Testing :
+
+Jest + React Testing Library

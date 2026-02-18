@@ -281,6 +281,10 @@
   .hero-text p{
     font-size: 1rem;
   }
+  .hero-text {
+  width: 100%;
+  margin: 0 auto;
+}
 
   .phone-wrapper.center img {
   width: 100%;

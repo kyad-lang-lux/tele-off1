@@ -285,7 +285,7 @@
   .phone-wrapper.center img {
   width: 100%;
   height: auto;
-  border-radius: 30px; /* Bords arrondis pour le style moderne */
+  border-radius: 5px; /* Bords arrondis pour le style moderne */
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3); /* Ombre très douce et diffuse */
 }
 
@@ -749,10 +749,10 @@ width: 300px;
 /* Optionnel : cacher sur les très petits écrans si ça gêne la lecture */
 @media (max-width: 480px) {
   .scroll-to-top {
-    width: 40px;
-    height: 40px;
-    bottom: 20px;
-    left: 20px;
+    width: 35px;
+    height: 35px;
+    bottom: 10px;
+    right: 20px;
   }
 }
 

@@ -291,7 +291,7 @@
   width: 100%;
   height: auto;
   border-radius: 5px; /* Bords arrondis pour le style moderne */
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3); /* Ombre très douce et diffuse */
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15); /* Ombre très douce et diffuse */
 }
 
 

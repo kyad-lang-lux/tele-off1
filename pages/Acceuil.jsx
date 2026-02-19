@@ -19,6 +19,7 @@ export default function Acceuil() {
               <button className="btn-main-orange">
                 Commencer <i className="fa-solid fa-arrow-right"></i>
               </button>
+             
             </div>
           </div>
 

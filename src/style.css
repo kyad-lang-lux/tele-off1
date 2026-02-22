@@ -1070,7 +1070,7 @@ width: 300px;
 
 @media (max-width: 768px) {
   .slider-wrapper {
-    height: 250px; /* Encore plus petit sur mobile */
+    height: 240px; /* Encore plus petit sur mobile */
   }
 }
 
@@ -1086,12 +1086,11 @@ width: 300px;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px;
+  padding: 40px;
   /* Fond semi-transparent + Effet de flou */
-  background: rgba(0, 0, 0, 0.4); 
+  background: rgba(139, 138, 138, 0.4); 
   backdrop-filter: blur(8px); 
-  -webkit-backdrop-filter: blur(8px); /* Pour Safari */
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(8px); 
   display: flex;
   justify-content: center;
   align-items: center;

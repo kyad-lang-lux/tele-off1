@@ -781,6 +781,7 @@ width: 300px;
   position: relative;
   display: flex;
   align-items: flex-end;
+  display: none;
   padding: 60px;
 }
 

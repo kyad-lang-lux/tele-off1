@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Acceuil() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,6 +21,9 @@ export default function Acceuil() {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
+
+  const navigate = useNavigate();
+
   return (
     <div className="home-page">
       <Navbar />
@@ -33,19 +37,17 @@ export default function Acceuil() {
             </p>
             
             <div className="hero-cta fade-in-delay2">
-              <button className="btn-main-orange">
-                Commencer <i className="fa-solid fa-arrow-right"></i>
-              </button>
+             <button 
+      className="btn-main-orange" 
+      onClick={() => navigate('/Connexion')}
+    >
+      Commencer <i className="fa-solid fa-arrow-right"></i>
+    </button>
              
             </div>
           </div>
 
-          {/* Image Unique avec effet de flottaison */}
-          {/* <div className="hero-visuals">
-            <div className="phone-wrapper center floating">
-              <img src="../img/img1.jpg" alt="Téléoff Dashboard" />
-            </div>
-          </div> */}
+          
          <div className="hero-visuals">
       <div className="carousel-container floating">
         <button className="nav-arrow left" onClick={prevSlide}>

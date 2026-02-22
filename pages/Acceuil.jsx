@@ -6,19 +6,19 @@ import { useState } from 'react';
 export default function Acceuil() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  const images = [
-    "../img/img1.jpg",
-    "../img/img2.jpg",
-    "../img/img3.jpg",
-    "../img/img4.jpg"
+ const slides = [
+    { img: "../img/img1.jpg", text: "Contrôlez vos lumières en un clic" },
+    { img: "../img/img2.jpg", text: "Gérez la température de votre foyer" },
+    { img: "../img/img3.jpg", text: "Sécurisez votre entrée à distance" },
+    { img: "../img/img4.jpg", text: "Suivez votre consommation d'énergie" }
   ];
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
   return (
     <div className="home-page">
@@ -46,40 +46,44 @@ export default function Acceuil() {
               <img src="../img/img1.jpg" alt="Téléoff Dashboard" />
             </div>
           </div> */}
-          <div className="hero-visuals">
-  <div className="carousel-container floating">
-    <button className="nav-arrow left" onClick={prevSlide}>
-      <i className="fa-solid fa-chevron-left"></i>
-    </button>
+         <div className="hero-visuals">
+      <div className="carousel-container floating">
+        <button className="nav-arrow left" onClick={prevSlide}>
+          <i className="fa-solid fa-chevron-left"></i>
+        </button>
 
-    <div className="slider-wrapper">
-      <div 
-        className="slider-content" 
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        {images.map((img, index) => (
-          <div className="slide" key={index}>
-            <img src={img} alt={`Dashboard ${index}`} />
+        <div className="slider-wrapper">
+          <div 
+            className="slider-content" 
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {slides.map((slide, index) => (
+              <div className="slide" key={index}>
+                <img src={slide.img} alt={`Slide ${index}`} />
+                {/* Overlay avec texte et flou */}
+                <div className="slide-caption">
+                  <p>{slide.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <button className="nav-arrow right" onClick={nextSlide}>
+          <i className="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div className="slider-dots">
+          {slides.map((_, index) => (
+            <span 
+              key={index} 
+              className={`dot ${currentSlide === index ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            ></span>
+          ))}
+        </div>
       </div>
     </div>
-
-    <button className="nav-arrow right" onClick={nextSlide}>
-      <i className="fa-solid fa-chevron-right"></i>
-    </button>
-
-    <div className="slider-dots">
-      {images.map((_, index) => (
-        <span 
-          key={index} 
-          className={`dot ${currentSlide === index ? 'active' : ''}`}
-          onClick={() => setCurrentSlide(index)}
-        ></span>
-      ))}
-    </div>
-  </div>
-</div>
         </div>
       </main>
 

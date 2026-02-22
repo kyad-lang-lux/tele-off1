@@ -8,10 +8,10 @@ export default function Acceuil() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
  const slides = [
-    { img: "../img/img1.jpg", text: "Contrôlez vos lumières en un clic" },
-    { img: "../img/img2.jpg", text: "Gérez la température de votre foyer" },
-    { img: "../img/img3.jpg", text: "Sécurisez votre entrée à distance" },
-    { img: "../img/img4.jpg", text: "Suivez votre consommation d'énergie" }
+   { img: "../img/img5.jpg", text: "Gérez la température de votre foyer" },
+    { img: "../img/img2.jpg", text: "Contrôlez vos lumières en un clic" },
+    { img: "../img/img4.jpg", text: "Sécurisez votre entrée à distance" },
+    { img: "../img/img6.jpg", text: "Suivez votre consommation d'énergie" }
   ];
 
   const nextSlide = () => {
@@ -225,10 +225,10 @@ export default function Acceuil() {
       </p>
       
       <div className="cta-buttons">
-        <button className="btn-cta-orange">
+        <button className="btn-cta-orange" >
           S'enregister <i className="fa-solid fa-arrow-right"></i>
         </button>
-        <button className="btn-cta-outline">
+        <button className="btn-cta-outline" onClick={() => navigate('/Connexion')}>
           Se connecter
         </button>
       </div>

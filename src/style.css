@@ -921,3 +921,155 @@ width: 300px;
     display: none; /* Cache l'image sur tablette/mobile pour simplifier */
   }
 }
+
+
+/* --- DASHBOARD PREVIEW SECTION --- */
+.dashboard-preview {
+  padding: 100px 8%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* On réutilise la même structure de titre pour la cohérence */
+.dashboard-preview .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.dashboard-preview .section-header h2 span {
+  color: #2563eb; /* Ton Bleu */
+}
+
+.dashboard-preview .section-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+}
+
+/* Le conteneur de l'image */
+.dashboard-image-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 24px;
+  /* Ombre portée douce et large pour l'effet de profondeur */
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08), 
+              0 10px 30px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.dashboard-image-wrapper:hover {
+  transform: translateY(-10px) scale(1.01);
+}
+
+.dashboard-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* On s'assure que l'image elle-même suit l'arrondi */
+  border-radius: 24px;
+}
+
+/* Effet de lueur subtile sur les bords */
+.dashboard-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-preview {
+    padding: 60px 20px;
+  }
+  
+  .dashboard-image-wrapper {
+    border-radius: 12px;
+  }
+  
+  .dashboard-img {
+    border-radius: 12px;
+  }
+}
+
+
+/* --- CAROUSEL HÉRO COMPACT --- */
+.hero-visuals {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0; /* Réduit l'espace vertical */
+}
+
+.carousel-container {
+  width: 90%;
+  max-width: 800px; /* Taille horizontale contenue */
+  position: relative;
+}
+
+.slider-wrapper {
+  width: 100%;
+  height: 450px; /* HAUTEUR FIXE pour éviter que ça prenne trop de place */
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.slider-content {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit le cadre proprement sans déformer */
+  object-position: top; /* Garde le haut de l'image (souvent là où est le menu du dashboard) */
+}
+
+/* Flèches plus petites et discrètes */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 5;
+  color: #2563eb;
+}
+
+.nav-arrow.left { left: -20px; }
+.nav-arrow.right { right: -20px; }
+
+/* Indicateurs plus proches de l'image */
+.slider-dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .slider-wrapper {
+    height: 250px; /* Encore plus petit sur mobile */
+  }
+}

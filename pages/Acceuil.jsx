@@ -1,8 +1,25 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useState } from 'react';
 
 export default function Acceuil() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const images = [
+    "../img/img1.jpg",
+    "../img/img2.jpg",
+    "../img/img3.jpg",
+    "../img/img4.jpg"
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
   return (
     <div className="home-page">
       <Navbar />
@@ -24,11 +41,45 @@ export default function Acceuil() {
           </div>
 
           {/* Image Unique avec effet de flottaison */}
-          <div className="hero-visuals">
+          {/* <div className="hero-visuals">
             <div className="phone-wrapper center floating">
-              <img src="../img/img.png" alt="Téléoff Dashboard" />
+              <img src="../img/img1.jpg" alt="Téléoff Dashboard" />
             </div>
+          </div> */}
+          <div className="hero-visuals">
+  <div className="carousel-container floating">
+    <button className="nav-arrow left" onClick={prevSlide}>
+      <i className="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div className="slider-wrapper">
+      <div 
+        className="slider-content" 
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {images.map((img, index) => (
+          <div className="slide" key={index}>
+            <img src={img} alt={`Dashboard ${index}`} />
           </div>
+        ))}
+      </div>
+    </div>
+
+    <button className="nav-arrow right" onClick={nextSlide}>
+      <i className="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <div className="slider-dots">
+      {images.map((_, index) => (
+        <span 
+          key={index} 
+          className={`dot ${currentSlide === index ? 'active' : ''}`}
+          onClick={() => setCurrentSlide(index)}
+        ></span>
+      ))}
+    </div>
+  </div>
+</div>
         </div>
       </main>
 
@@ -132,6 +183,28 @@ export default function Acceuil() {
           <p>Gérez tous vos appareils, créez des scénarios et profitez d'une maison vraiment intelligente.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section className="dashboard-preview">
+  <div className="container">
+    {/* En-tête de la section */}
+    <div className="section-header fade-in">
+      <h2>Aperçu du <span>tableau de bord</span></h2>
+      <p>Une interface claire et intuitive pour gérer tous vos appareils en un coup d'œil.</p>
+    </div>
+
+    {/* Conteneur de l'image unique */}
+    <div className="dashboard-image-wrapper fade-in-delay">
+      <img 
+        src="../img/img.png" 
+        alt="Aperçu du tableau de bord Téléoff" 
+        className="dashboard-img"
+      />
+      
+      {/* Petit effet de reflet/brillance optionnel */}
+      <div className="glass-overlay"></div>
     </div>
   </div>
 </section>

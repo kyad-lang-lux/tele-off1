@@ -174,9 +174,53 @@
   padding: 30px 20px;
   background-color: #fcfcfc;
   text-align: center;
-  overflow: hidden;
+  overflow: hidden; /* Important pour ne pas avoir de barre de défilement horizontale à cause du flou */
+  position: relative; /* Indispensable pour positionner les néons */
+  z-index: 1;
 }
 
+/* Base commune pour les deux lueurs néon */
+.hero-section::before,
+.hero-section::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(100px); /* Effet néon diffus */
+  z-index: -1; /* Derrière le texte et les images */
+  opacity: 0.5; /* Intensité douce pour ne pas gêner la lecture */
+  pointer-events: none;
+}
+
+/* Lueur bleue (Néon gauche) */
+.hero-section::before {
+  background: #2563eb;
+  top: 10%;
+  left: -150px; /* Sort légèrement de l'écran pour l'effet de bord */
+}
+
+/* Lueur orange (Néon droite) */
+.hero-section::after {
+  background: #ff7a30;
+  bottom: 20%;
+  right: -150px; /* Sort légèrement de l'écran */
+}
+
+/* Lueur centrale subtile (Optionnelle, derrière tes boutons ou ton carousel) */
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1), transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+}
 .hero-text {
   max-width: 800px;
   margin: 0 auto 0px auto;

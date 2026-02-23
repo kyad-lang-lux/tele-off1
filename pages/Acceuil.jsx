@@ -101,7 +101,7 @@ export default function Acceuil() {
       {/* Carte 1 */}
       <div className="feature-card fade-in-delay">
         <div className="icon-wrapper blue-bg">
-          <i className="fa-solid fa-mobile-screen-button"></i>
+          <i className="fas fa-satellite-dish"></i>
         </div>
         <h3>Contrôle à distance</h3>
         <p>Gérez tous vos appareils depuis n'importe où grâce à notre application intuitive.</p>
@@ -110,7 +110,7 @@ export default function Acceuil() {
       {/* Carte 2 */}
       <div className="feature-card fade-in-delay">
         <div className="icon-wrapper blue-bg">
-          <i className="fa-solid fa-shield-halved"></i>
+          <i className="fas fa-shield-virus"></i>
         </div>
         <h3>Sécurité renforcée</h3>
         <p>Protégez votre maison avec un chiffrement de bout en bout et une authentification sécurisée.</p>
@@ -119,7 +119,7 @@ export default function Acceuil() {
       {/* Carte 3 */}
       <div className="feature-card fade-in-delay">
         <div className="icon-wrapper blue-bg">
-          <i className="fa-solid fa-bolt-lightning"></i>
+          <i className="fas fa-bolt"></i>
         </div>
         <h3>Réponse instantanée</h3>
         <p>Actions en temps réel avec une latence rapide pour tous vos appareils.</p>
@@ -128,20 +128,13 @@ export default function Acceuil() {
       {/* Carte 4 */}
       <div className="feature-card fade-in-delay2">
         <div className="icon-wrapper blue-bg">
-          <i className="fa-solid fa-clock"></i>
+          <i className="fas fa-sync-alt"></i>
         </div>
         <h3>Automatisations</h3>
         <p>Créez des scénarios intelligents qui s'adaptent à votre routine quotidienne.</p>
       </div>
 
-      {/* Carte 5 */}
-      {/* <div className="feature-card fade-in-delay2">
-        <div className="icon-wrapper blue-bg">
-          <i className="fa-solid fa-wifi"></i>
-        </div>
-        <h3>Multi-protocoles</h3>
-        <p>Compatible Wi-Fi, Zigbee, Z-Wave et Bluetooth pour une flexibilité maximale.</p>
-      </div> */}
+      
 
       {/* Carte 6 */}
       <div className="feature-card fade-in-delay2">

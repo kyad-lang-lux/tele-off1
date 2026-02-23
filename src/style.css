@@ -195,14 +195,14 @@
 
 /* Lueur bleue (Néon gauche) */
 .hero-section::before {
-  background: #2563eb;
+  background: #06b6d4;
   top: 10%;
   left: -150px; /* Sort légèrement de l'écran pour l'effet de bord */
 }
 
 /* Lueur orange (Néon droite) */
 .hero-section::after {
-  background: #ff7a30;
+  background: #1e3a8a;
   bottom: 20%;
   right: -150px; /* Sort légèrement de l'écran */
 }
@@ -346,8 +346,44 @@
 .features-section {
   padding: 100px 8%;
   background-color: #ffffff;
+  position: relative; /* Indispensable pour les néons */
+  overflow: hidden; /* Empêche les débordements du flou */
+  z-index: 1;
 }
 
+/* Base des lueurs pour Features */
+.features-section::before,
+.features-section::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  opacity: 0.4; /* Légèrement plus diffus car le fond est blanc pur */
+  pointer-events: none;
+}
+
+/* Lueur Violette à droite (en haut) */
+.features-section::before {
+  background: #2563eb; /* Violet vibrant */
+  top: -10%;
+  right: -150px;
+}
+
+/* Lueur Cyan à gauche (en bas) */
+.features-section::after {
+  background: #ff7a30; /* Cyan / Turquoise */
+  bottom: 0%;
+  left: -150px;
+}
+
+/* Ajout d'une lueur de fond sur les cartes au survol (optionnel) */
+.feature-card:hover {
+  border-color: rgba(147, 51, 234, 0.3);
+  box-shadow: 0 20px 40px rgba(147, 51, 234, 0.08);
+}
 .features-header {
   text-align: center;
   margin-bottom: 60px;

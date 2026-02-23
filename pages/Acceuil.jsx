@@ -223,7 +223,7 @@ export default function Acceuil() {
         Rejoignez des milliers d'utilisateurs qui ont déjà adopté Téléoff pour une 
         maison plus intelligente, plus sûre et plus économe en énergie.
       </p>
-      
+       
       <div className="cta-buttons">
         <button className="btn-cta-orange" >
           S'enregister <i className="fa-solid fa-arrow-right"></i>

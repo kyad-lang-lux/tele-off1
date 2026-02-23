@@ -356,12 +356,12 @@
 .features-section::after {
   content: "";
   position: absolute;
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(200px);
   z-index: -1;
-  opacity: 0.4; /* Légèrement plus diffus car le fond est blanc pur */
+  opacity: 0.3; /* Légèrement plus diffus car le fond est blanc pur */
   pointer-events: none;
 }
 
@@ -1468,4 +1468,136 @@ width: 300px;
 
 @media (max-width: 768px) {
   .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* --- PAGE ENREGISTREMENT --- */
+.register-page {
+  background-color: #fcfcfc;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-header {
+  padding: 100px 20px 60px;
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.register-header h1 span { color: #2563eb; }
+
+/* Grille de processus */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 60px 0;
+}
+
+.process-step {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  transition: 0.3s;
+}
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+/* Box d'activation Néon */
+.activation-box {
+  background: #0a0a0a; /* Fond noir pour faire ressortir le néon */
+  color: white;
+  border-radius: 30px;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Néon pour la box d'enregistrement */
+.activation-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: #ff007f; /* Rose néon */
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.activation-text { flex: 2; }
+.activation-text h2 { font-size: 2.2rem; margin-bottom: 20px; }
+.activation-text p { color: #9ca3af; margin-bottom: 35px; line-height: 1.6; }
+
+.contact-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp, .btn-call {
+  padding: 15px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.btn-whatsapp { background: #25d366; color: white; }
+.btn-call { background: white; color: #0a0a0a; }
+
+.btn-whatsapp:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+
+/* Infos à droite */
+.activation-info { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.info-card i { color: #ff7a30; font-size: 1.5rem; margin-bottom: 10px; }
+.info-card h4 { margin-bottom: 5px; }
+.info-card p { font-size: 0.85rem; color: #9ca3af; }
+
+.already-installed {
+  text-align: center;
+  margin: 40px 0 80px;
+}
+.already-installed button {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .activation-box { flex-direction: column; padding: 40px 20px; text-align: center; }
+  .contact-actions { justify-content: center; }
 }

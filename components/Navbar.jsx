@@ -25,13 +25,13 @@ export default function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Fonctionnalites" className={({ isActive }) => isActive ? "active" : ""}>
-              Fonctionnalités
+            <NavLink to="/Support" className={({ isActive }) => isActive ? "active" : ""}>
+              Support
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Support" className={({ isActive }) => isActive ? "active" : ""}>
-               Support
+            <NavLink to="/enregistrement" className={({ isActive }) => isActive ? "active" : ""}>
+               S'enregistrer
             </NavLink>
           </li>
           <li className="mobile-only">

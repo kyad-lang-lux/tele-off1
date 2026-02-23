@@ -20,7 +20,6 @@ export default function Footer() {
           <ul>
             <li><a href="/confidentialite">Confidentialité</a></li>
             <li><a href="/conditions">Conditions d'utilisation</a></li>
-            <li><a href="/cookies">Cookies</a></li>
           </ul>
         </div>
       </div>

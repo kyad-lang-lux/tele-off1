@@ -8,7 +8,7 @@ import Confidentialite from "../pages/Confidentialite";
 import Conditions from "../pages/Conditions";
 import Enregistrement from "../pages/enregistrement";
 import Dashboard from "../dashboard/dashboard";
-import Scenario from "../dashboard/Scenario";
+import Scenarios from "../dashboard/Scenarios";
 import Profil from "../dashboard/Profil";
 import Appareils from "../dashboard/Appareils";
 import Layout from "../dashboard/components/Layout";
@@ -29,7 +29,7 @@ ReactDom.createRoot(document.getElementById("root")).render(
         <Route path="/Support" element={<Support />} />
         <Route path="/Enregistrement" element={<Enregistrement />} />
         <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/Scenario" element={<Scenario />} />
+        <Route path="/Scenarios" element={<Scenarios />} />
         <Route path="/Profil" element={<Profil />} />
         <Route path="/Appareils" element={<Appareils />} />
         <Route path="/MobileNav" element={<MobileNav />} />

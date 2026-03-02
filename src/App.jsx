@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Acceuil from '../pages/Acceuil'
+import Dashboard from '../dashboard/dashboard'
 
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/Acceuil" replace />} />
           <Route path="/Acceuil" element={<Acceuil/>} />
+          <Route path="/Dashboard" element={<Dashboard/>} />
         </Routes>
       </main>
       <Footer />

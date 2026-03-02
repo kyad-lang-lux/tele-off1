@@ -5,7 +5,6 @@ import Acceuil from "../pages/Acceuil";
 import Connexion from "../pages/Connexion";
 import Support from "../pages/Support";
 
-import Enregistrement from "../pages/enregistrement";
 import Dashboard from "../dashboard/Dashboard";
 import Scenarios from "../dashboard/Scenarios";
 import Profil from "../dashboard/Profil";
@@ -26,7 +25,6 @@ ReactDom.createRoot(document.getElementById("root")).render(
         <Route path="/Acceuil" element={<Acceuil />} />
         <Route path="/Connexion" element={<Connexion />} />
         <Route path="/Support" element={<Support />} />
-        <Route path="/Enregistrement" element={<Enregistrement />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Scenarios" element={<Scenarios />} />
         <Route path="/Profil" element={<Profil />} />

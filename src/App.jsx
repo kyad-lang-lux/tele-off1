@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Acceuil from '../pages/Acceuil'
-import Dashboard from '../dashboard/dashboard'
+import Dashboard from '../dashboard/Dashboard'
 
 
 export default function App() {

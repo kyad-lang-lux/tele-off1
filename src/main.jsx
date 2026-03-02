@@ -4,10 +4,9 @@ import App from "./App";
 import Acceuil from "../pages/Acceuil";
 import Connexion from "../pages/Connexion";
 import Support from "../pages/Support";
-import Confidentialite from "../pages/Confidentialite";
-import Conditions from "../pages/Conditions";
+
 import Enregistrement from "../pages/enregistrement";
-import Dashboard from "../dashboard/dashboard";
+import Dashboard from "../dashboard/Dashboard";
 import Scenarios from "../dashboard/Scenarios";
 import Profil from "../dashboard/Profil";
 import Appareils from "../dashboard/Appareils";

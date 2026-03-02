@@ -1,18 +1,18 @@
 import React from 'react';
 import Sidebar from './Sidebar';
-import Topbar from './Topbar';
 import MobileNav from './MobileNav';
 import '../Dashboard.css';
 
-export default function Layout({ children }) {
+export default function Layout({ children, customTopbar }) {
   return (
     <div className="dashboard-layout">
       <Sidebar />
       <div className="dashboard-main">
-        <Topbar />
-        <div className="dashboard-content-scroll">
+        {/* Le topbar est passé en prop pour rester synchronisé avec la recherche */}
+        {customTopbar} 
+        <main className="dashboard-content-scroll">
           {children}
-        </div>
+        </main>
       </div>
       <MobileNav />
     </div>

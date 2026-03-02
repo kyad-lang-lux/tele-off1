@@ -10,7 +10,7 @@ import Enregistrement from "../pages/enregistrement";
 import Dashboard from "../dashboard/dashboard";
 import Scenario from "../dashboard/Scenario";
 import Profil from "../dashboard/Profil";
-import Appareil from "../dashboard/appareil";
+import Appareils from "../dashboard/Appareils";
 import Layout from "../dashboard/components/Layout";
 import Sidebar from "../dashboard/components/Sidebar";
 import Topbar from "../dashboard/components/Topbar";
@@ -31,7 +31,7 @@ ReactDom.createRoot(document.getElementById("root")).render(
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Scenario" element={<Scenario />} />
         <Route path="/Profil" element={<Profil />} />
-        <Route path="/Appareil" element={<Appareil />} />
+        <Route path="/Appareils" element={<Appareils />} />
         <Route path="/MobileNav" element={<MobileNav />} />
         <Route path="/Topbar" element={<Topbar />} />
         <Route path="/Sidebar" element={<Sidebar />} />

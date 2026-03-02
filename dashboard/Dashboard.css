@@ -577,3 +577,103 @@ input:checked + .slider:before { transform: translateX(18px); }
   .scenario-texts h4 { font-size: 0.95rem; }
   .scenario-texts p { font-size: 0.75rem; }
 }
+
+
+/* --- PAGE APPAREILS --- */
+.devices-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-add-purple {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: white; border: none; padding: 10px 20px;
+  border-radius: 12px; font-weight: 600; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.secondary-search {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  height: 45px;
+}
+
+.secondary-search input {
+  border: none; outline: none; width: 100%;
+  padding-left: 10px; font-size: 0.9rem;
+}
+
+.secondary-search i { color: var(--text-muted); }
+
+/* Filtres de pièces */
+.room-filters {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  scrollbar-width: none; /* Cache la barre sur Firefox */
+}
+.room-filters::-webkit-scrollbar { display: none; } /* Cache sur Chrome/Safari */
+
+.filter-pill {
+  white-space: nowrap;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Formulaire Modale spécifique */
+.icon-picker {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.icon-picker i {
+  width: 40px; height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--text-muted);
+}
+
+.icon-picker i.active {
+  background: #f1f5f9;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+select {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* RESPONSIVE APPAREILS */
+@media (max-width: 600px) {
+  .devices-page-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+  .btn-add-purple { width: 100%; justify-content: center; }
+  .filter-pill { padding: 6px 12px; font-size: 0.75rem; }
+}
